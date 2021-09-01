@@ -13,5 +13,4 @@
     <script src="{{asset('public/backend/assets')}}/js/dashboard.js"></script>
     <script src="{{asset('public/backend/assets')}}/js/todolist.js"></script>
     <!-- End custom js for this page -->
-  </body>
-</html>
+    
