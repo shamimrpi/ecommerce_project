@@ -1,0 +1,56 @@
+:root{
+    --blue:#05A391;
+}
+*::selection{
+    background:var(--blue);
+    color:#333;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width:1.4rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#222;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--blue);
+}
+
+
+
+.box-shadow:hover{
+	box-shadow: 1px 2px 5px #000;
+	transition: all 0.5s 0s ease;
+
+}
+.box-shadow{
+	transition: all 0.5s 0s ease;
+	background: #fff;
+
+}
+.text-danger{
+	color:red;
+}
+body{
+	background: #F1F1F1;
+
+}
+.mynavbar {
+	background-color: red !important;
+}
+span.mdi.mdi-menu {
+    color:black !important;
+}
+nav.secondary-nav-wrapper{
+	background:#05A391;
+}
+.header_navbar{
+	margin-top:-10px;
+}

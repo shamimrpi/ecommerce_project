@@ -9,6 +9,7 @@
         ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <script src="{{asset('public/frontend/assets')}}/js/validate.min.js"></script>
 
     <!--====== Vendor Js ======-->
     <script src="{{asset('public/frontend/assets')}}/js/vendor.js"></script>

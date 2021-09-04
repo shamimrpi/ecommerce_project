@@ -20,4 +20,6 @@
 
     <!--====== App ======-->
     <link rel="stylesheet" href="{{asset('public/frontend/assets')}}/css/app.css">
+    <link rel="stylesheet" href="{{asset('public')}}/custom.css">
+
 </head>

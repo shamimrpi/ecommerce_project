@@ -11,7 +11,7 @@
         @include('backend.main.sidebar')
         <!-- partial -->
         <div class="main-panel">
-       
+        <div class='notifications top-right'></div>
 
          	@yield('main_content')
           <!-- content-wrapper ends -->
@@ -24,7 +24,10 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    @include('backend.main.footer_script') 
+    @include('backend.main.footer_script')
+
+    @yield('scripts')
+
     <!-- End custom js for this page -->
   </body>
 </html>

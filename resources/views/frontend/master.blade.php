@@ -1,6 +1,6 @@
-@include('frontend.layout.header');
+@include('frontend.layout.header')
 @yield('css')
-@include('frontend.layout.navbar');
+@include('frontend.layout.navbar')
         <!--====== End - Main Header ======-->
 
 
@@ -14,7 +14,7 @@
 
     
     <!--====== End - Main App ======-->
-@include('frontend.layout.main_footer');
-@include('frontend.layout.footer_script');
+@include('frontend.layout.main_footer')
+@include('frontend.layout.footer_script')
 @yield('scripts')
-@include('frontend.layout.footer');
+@include('frontend.layout.footer')
