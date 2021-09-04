@@ -19,7 +19,7 @@ class ProductSearchController extends Controller
     	}]
     ])
     	->orderBy('id','DESC')
-    		->paginate(10);
+    		->paginate(6);
 
     		return view('frontend.product.search',$data);
     }

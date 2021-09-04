@@ -30,7 +30,7 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->item_code }}</td>
-                            <td>{{ $product->category }}</td>
+                            <td>{{ $product->category->name }}</td>
                             <td>{{ $product->size }}</td>
                             <td>{{ $product->stock }}</td>
                             <td>{{ $product->p_rate }}</td>

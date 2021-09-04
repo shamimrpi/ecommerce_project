@@ -18,14 +18,11 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Category</label>
-                        <select class="form-control" name="category">
+                        <select class="form-control" name="category_id">
                           <option>Select Category</option>
-                          <option value="a_cat">A Category</option>
-                          <option value="b_cat">B Category</option>
-                          <option value="c_cat">C Category</option>
-                          <option value="d_cat">D Category</option>
-                          <option value="e_cat">E Category</option>
-                          <option value="f_cat">F Category</option>
+                          @foreach($categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          @endforeach
                         </select>
                         @if($errors->has('category'))
                           <span class="text-danger">{{$errors->first('category')}}</span>

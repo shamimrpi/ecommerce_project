@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
+
 class BackendProductController extends Controller
 {
 	public function index(){
@@ -11,12 +13,13 @@ class BackendProductController extends Controller
 		return view('backend.products.index',compact('products'));
 	}
     public function create(){
-    	return view('backend.products.create');
+        $categories = Category::all();
+    	return view('backend.products.create',compact('categories'));
     }
     public function store(Request $r){
     	$this->validate($r,[
     		'name' => 'required',
-    		'category' => 'required',
+    		'category_id' => 'required',
     		'size'  => 'required',
     		'p_rate'  => 'required',
     		'b_rate'  => 'required',
@@ -30,7 +33,7 @@ class BackendProductController extends Controller
     	$product = new Product();
 
     	$product->name = $r->name;
-    	$product->category = $r->category;
+    	$product->category_id = $r->category_id;
     	$product->size = $r->size;
     	$product->p_rate = $r->p_rate;
     	$product->b_rate = $r->b_rate;

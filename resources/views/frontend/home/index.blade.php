@@ -34,10 +34,12 @@
                                     <div class="filter__category-wrapper">
 
                                         <button class="btn filter__btn filter__btn--style-1 js-checked" type="button" data-filter="*">ALL</button></div>
-                                        @foreach($p_cat as $key=> $product)
-                                    <div class="filter__category-wrapper">
+                                        @foreach($categories as $key=> $category)
+                                        <div class="filter__category-wrapper">
 
-                                        <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".{{ $product->category }}">{{ $product->category }}</button></div>
+                                            <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".{{ $category->id
+                                             }}">{{ $category->name }}</button>
+                                        </div>
                                         @endforeach
                                     
                                 </div>
@@ -45,7 +47,7 @@
                                 <div class="filter__grid-wrapper u-s-m-t-30 ">
                                     <div class="row">
                                     @foreach($products as $key=> $product)
-                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item {{ $product->category}}">
+                                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item {{ $product->category_id}}">
                                             <div class="product-o product-o--hover-on product-o--radius">
                                                 
                                                     <div class="product-o__wrap">
@@ -74,7 +76,7 @@
 
                                                 <span class="product-o__category">
 
-                                                    <a href="shop-side-version-2.html">{{ $product->category }}</a></span>
+                                                    <a href="shop-side-version-2.html">{{ $product->category->name }}</a></span>
 
                                                 <span class="product-o__name">
 
@@ -298,7 +300,9 @@
             </div>
             <!--====== End - Section 2 ======-->
 
-
+            <div class="border_bottom">
+            </div>
+            <br/>
             <!--====== Section 3 ======-->
             <div class="u-s-p-b-60">
 
@@ -325,16 +329,16 @@
                 <div class="section__content">
                     <div class="container">
                         <div class="row">
-                            @foreach($a_products as $key=>$product)
+                            @foreach($hot_category as $key=>$product)
                             <div class="col-lg-6 col-md-6 u-s-m-b-30">
                                 <div class="product-o product-o--radius product-o--hover-off u-h-100">
                                     <div class="product-o__wrap">
 
                                         <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
 
-                                            <img class="aspect__img" src="{{asset('public/frontend/assets')}}/images/product/electronic/product11.jpg" alt=""></a>
+                                            <img class="aspect__img" src="public/frontend/products/images/{{ $product->image }}" alt=""></a>
                                         <div class="product-o__special-count-wrap">
-                                            <div class="countdown countdown--style-special" data-countdown="2022/02/14"></div>
+                                            <div class="countdown countdown--style-special" data-countdown="{{ $product->count_date }}"></div>
                                         </div>
                                         <div class="product-o__action-wrap">
                                             <ul class="product-o__action-list">
@@ -360,70 +364,26 @@
 
                                     <span class="product-o__name">
 
-                                        <a href="product-detail.html">{{ $product->name }}</a></span>
+                                        <a href="product-detail.html">{{ $product->category->name }}</a></span>
                                     <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 
                                         <span class="product-o__review">(2)</span></div>
 
-                                    <span class="product-o__price">$125.00
+                                    <span class="product-o__price">{{ $product->b_rate }}
 
                                         <span class="product-o__discount">$160.00</span></span>
                                 </div>
                             </div>
                             @endforeach
 
-
-                            <div class="col-lg-6 col-md-6 u-s-m-b-30">
-                                <div class="product-o product-o--radius product-o--hover-off u-h-100">
-                                    <div class="product-o__wrap">
-
-                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                            <img class="aspect__img" src="{{asset('public/frontend/assets')}}/images/product/electronic/product12.jpg" alt=""></a>
-                                        <div class="product-o__special-count-wrap">
-                                            <div class="countdown countdown--style-special" data-countdown="2022/05/01"></div>
-                                        </div>
-                                        <div class="product-o__action-wrap">
-                                            <ul class="product-o__action-list">
-                                                <li>
-
-                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a></li>
-                                                <li>
-
-                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
-                                                <li>
-
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                                                <li>
-
-                                                    <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <span class="product-o__category">
-
-                                        <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                    <span class="product-o__name">
-
-                                        <a href="product-detail.html">DJI Phantom Drone 2k</a></span>
-                                    <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-
-                                        <span class="product-o__review">(2)</span></div>
-
-                                    <span class="product-o__price">$125.00
-
-                                        <span class="product-o__discount">$160.00</span></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <!--====== End - Section Content ======-->
             </div>
             <!--====== End - Section 3 ======-->
-
+             <div class="border_bottom">
+            </div>
 
             <!--====== Section 4 ======-->
             <div class="u-s-p-b-60">
@@ -452,6 +412,7 @@
                             <div class="owl-carousel product-slider" data-item="4">
                                 <div class="u-s-m-b-30">
                                     <div class="product-o product-o--hover-on">
+
                                         <div class="product-o__wrap">
 
                                             <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
