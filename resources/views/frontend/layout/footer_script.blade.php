@@ -8,6 +8,10 @@
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('send', 'pageview')
     </script>
+    <script>
+    $('#flash-overlay-modal').modal();
+</script>
+
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     <script src="{{asset('public/frontend/assets')}}/js/validate.min.js"></script>
 

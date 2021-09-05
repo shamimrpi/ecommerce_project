@@ -6,7 +6,7 @@
 
         <!--====== App Content ======-->
         <div class="app-content">
-
+        	
            @yield('main_content')
         </div>
         <!--====== End - App Content ======-->

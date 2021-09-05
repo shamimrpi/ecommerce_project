@@ -57,6 +57,6 @@ class BackendProductController extends Controller
     		$item_prodcut->save();
          }
      
-        return redirect()->route('product.create')->with('message','Product Added Successfully');;
+        return redirect()->route('product.create')->with('message','Product Added Successfully');
     }
 }

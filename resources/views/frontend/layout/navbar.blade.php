@@ -23,7 +23,8 @@
 
                         <a class="main-logo" href="{{ route('home') }}">
 
-                            <img src="public/frontend/images/{{ $headertop->logo }}" alt=""></a>
+                          
+                            <img src="{{ asset('public/frontend/images/'.$headertop->logo) }}" alt=""></a>
                         <!--====== End - Main Logo ======-->
 
 
@@ -500,12 +501,12 @@
 
                                                             <a class="mini-product__link" href="product-detail.html">
 
-                                                                <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></a></div>
+                                                                <img class="u-img-fluid" src="{{ asset('public/frontend/products/images/'.$cart->product->image) }}" alt=""></a></div>
                                                         <div class="mini-product__info-wrapper">
 
                                                             <span class="mini-product__category">
 
-                                                                <a href="shop-side-version-2.html">Electronics</a></span>
+                                                                <a href="shop-side-version-2.html">{{ $cart->product->category->name }}</a></span>
 
                                                             <span class="mini-product__name">
 
@@ -516,7 +517,7 @@
                                                             <span class="mini-product__price">{{ $cart->price/$cart->qty }}</span></div>
                                                     </div>
 
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    <a class="mini-product__delete-link far fa-trash-alt" href="{{ route('cart.delete',$cart->id) }}"></a>
                                                 </div>
 
                                                 @endforeach

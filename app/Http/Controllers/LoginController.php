@@ -19,7 +19,7 @@ class LoginController extends Controller
     	if (Auth::attempt($data)) {
     		return redirect()->route('dashboard');
     	} else {
-    		return redirect()->route('admin.login')->withErrors(['Invalid Email and password']);
+    		return redirect()->route('login')->withErrors(['Invalid Email and password']);
     	}
     }
 
@@ -27,6 +27,6 @@ class LoginController extends Controller
     {
     	Auth::logout();
 
-    	return redirect()->route('admin.login');
+    	return redirect()->route('login');
     }
 }

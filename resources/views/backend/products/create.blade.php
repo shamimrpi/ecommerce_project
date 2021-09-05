@@ -31,7 +31,7 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Size</label>
                         <select class="form-control" name="size">
-                          <option>Select Category</option>
+                          <option>Select Size</option>
                           <option value="small">Small</option>
                           <option value="mediam">Mediam</option>
                           <option value="large">Large</option>
@@ -46,7 +46,7 @@
 
                       <div class="form-group">
                         <label for="exampleInputUsername1">Purchase Rate</label>
-                        <input type="text" class="form-control" name="p_rate" id="phone"  placeholder="Product Name">
+                        <input type="text" class="form-control" name="p_rate" id="phone"  placeholder="Purchage Rate">
                          @if($errors->has('p_rate'))
                         <span class="text-danger">{{$errors->first('p_rate')}}</span>
                         @endif
@@ -78,6 +78,7 @@
                       <div class="form-group">
                         <label for="logo">Image</label>
                         <input type="file" name="image" class="form-control" id="imgload">
+                        
                          @if($errors->has('image'))
                           <span class="text-danger">{{$errors->first('image')}}</span>
                         @endif

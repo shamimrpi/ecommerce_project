@@ -35,7 +35,7 @@
                                                     <div class="table-p__box">
                                                         <div class="table-p__img-wrap">
 
-                                                            <img class="u-img-fluid" src="public/frontend/products/images/{{ $cart['product']['image']}}" alt="Product image"></div>
+                                                            <img class="u-img-fluid" src="{{ asset('public/frontend/products/images/'.$cart->product->image) }}" alt="Product image"></div>
                                                         <div class="table-p__info">
 
                                                             <span class="table-p__name">
